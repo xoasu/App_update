@@ -1,10 +1,57 @@
-{ 
-"Visibility": "VISIBLE", 
-"Title": "Test", 
-"Description": "Test Message", 
-"MainTextButton": "Update", 
-"Cancelable": "true", 
-"CancelButtonText": "Cancel", 
-"DownloadLink": "https://t.me/Its_Me_Hasan", 
-"Version": "1.1.0" 
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>App Update</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f4f4f4;
+    }
+    .card {
+      background: white;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      color: #555;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .update-btn {
+      background-color: #28a745;
+    }
+    .cancel-btn {
+      background-color: #dc3545;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Test</h1>
+    <p>Test Message</p>
+    <div class="buttons">
+      <a class="update-btn" href="https://t.me/Its_Me_Hasan" target="_blank">Update</a>
+      <a class="cancel-btn" href="#">Cancel</a>
+    </div>
+    <p style="margin-top: 20px; font-size: 12px; color: #888;">Version: 1.1.0</p>
+  </div>
+</body>
+</html>
