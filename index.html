@@ -44,14 +44,33 @@
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Test</h1>
-    <p>Test Message</p>
+  <div class="card" id="update-card" style="display: none;">
+    <h1 id="title">Loading...</h1>
+    <p id="description"></p>
     <div class="buttons">
-      <a class="update-btn" href="https://t.me/Its_Me_Hasan" target="_blank">Update</a>
-      <a class="cancel-btn" href="#">Cancel</a>
+      <a class="update-btn" id="update-btn" href="#" target="_blank">Update</a>
+      <a class="cancel-btn" id="cancel-btn" href="#">Cancel</a>
     </div>
-    <p style="margin-top: 20px; font-size: 12px; color: #888;">Version: 1.1.0</p>
+    <p style="margin-top: 20px; font-size: 12px; color: #888;" id="version"></p>
   </div>
+
+  <script>
+    fetch('update.json')
+      .then(response => response.json())
+      .then(data => {
+        if (data.Visibility === "VISIBLE") {
+          document.getElementById('update-card').style.display = 'block';
+          document.getElementById('title').innerText = data.Title;
+          document.getElementById('description').innerText = data.Description;
+          document.getElementById('update-btn').innerText = data.MainTextButton;
+          document.getElementById('update-btn').href = data.DownloadLink;
+          document.getElementById('cancel-btn').innerText = data.CancelButtonText;
+          document.getElementById('version').innerText = "Version: " + data.Version;
+        }
+      })
+      .catch(error => {
+        document.getElementById('title').innerText = "Error loading update info";
+      });
+  </script>
 </body>
 </html>
